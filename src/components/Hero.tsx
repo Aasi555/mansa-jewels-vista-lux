@@ -10,22 +10,13 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background with Overlay */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBackground})` }}
       >
-        <source src="/jewelry-video.mp4" type="video/mp4" />
-        {/* Fallback image if video fails to load */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
-          style={{ backgroundImage: `url(${heroBackground})` }}
-        />
-      </video>
-      <div className="absolute inset-0 video-overlay"></div>
+        <div className="absolute inset-0 video-overlay"></div>
+      </div>
 
       {/* Hero Content */}
       <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
