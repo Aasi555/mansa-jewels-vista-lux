@@ -59,6 +59,12 @@ const Footer = () => {
               >
                 About Us
               </a>
+              <a
+                href='/auth'
+                className='block text-muted-foreground hover:text-primary transition-smooth'
+              >
+                Sign In / Sign Up
+              </a>
             </nav>
           </div>
 
