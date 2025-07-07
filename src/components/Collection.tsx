@@ -95,28 +95,32 @@ const Collection = () => {
         </div>
 
         {/* Upload Section for Admin */}
-        {/* <div className='card-luxury p-8 text-center'>
-          <h3 className='text-2xl font-playfair font-semibold text-foreground mb-4'>
-            Content Management
-          </h3>
-          <p className='text-muted-foreground mb-6'>
-            Upload product photos and videos to showcase your beautiful jewelry
-            collection
-          </p>
-          <div className='flex flex-wrap justify-center gap-4'>
-            <Button variant='luxury'>
-              <Upload className='mr-2 h-5 w-5' />
-              Upload Photos
-            </Button>
-            <Button variant='royal'>
-              <Video className='mr-2 h-5 w-5' />
-              Upload Videos
-            </Button>
-          </div>
-          <p className='text-sm text-muted-foreground/70 mt-4'>
-            * This section will be connected to a content management system
-          </p>
-        </div> */}
+        {localStorage.getItem("sb-yexrnqyqooymelekgegc-auth-token") &&
+          JSON.parse(localStorage.getItem("sb-yexrnqyqooymelekgegc-auth-token"))
+            .user.id === "37d4154b-7e5e-4c99-9869-ac25d6845b76" && (
+            <div className='card-luxury p-8 text-center'>
+              <h3 className='text-2xl font-playfair font-semibold text-foreground mb-4'>
+                Content Management
+              </h3>
+              <p className='text-muted-foreground mb-6'>
+                Upload product photos and videos to showcase your beautiful
+                jewelry collection
+              </p>
+              <div className='flex flex-wrap justify-center gap-4'>
+                <Button variant='luxury'>
+                  <Upload className='mr-2 h-5 w-5' />
+                  Upload Photos
+                </Button>
+                <Button variant='royal'>
+                  <Video className='mr-2 h-5 w-5' />
+                  Upload Videos
+                </Button>
+              </div>
+              <p className='text-sm text-muted-foreground/70 mt-4'>
+                * This section will be connected to a content management system
+              </p>
+            </div>
+          )}
       </div>
     </section>
   );
