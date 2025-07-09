@@ -17,12 +17,8 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({
 }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
-    align: 'start',
-    slidesToScroll: 1,
-    breakpoints: {
-      '(min-width: 640px)': { slidesToScroll: 2 },
-      '(min-width: 1024px)': { slidesToScroll: 3 }
-    }
+    align: 'center',
+    slidesToScroll: 1
   });
   
   const [imageErrors, setImageErrors] = useState<Set<string>>(new Set());
@@ -72,7 +68,7 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({
             {images.map((image, index) => (
               <div
                 key={index}
-                className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] pl-4 first:pl-0"
+                className="flex-[0_0_100%]"
               >
                 <div className="relative aspect-square">
                   {imageErrors.has(image) ? (
@@ -82,7 +78,7 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({
                       <img
                         src={image}
                         alt={`${productName} - Image ${index + 1}`}
-                        className="w-full h-full object-cover rounded-lg cursor-pointer transition-transform hover:scale-105"
+                        className="w-full h-full object-cover rounded-lg cursor-pointer transition-all duration-300 hover:scale-105"
                         onError={() => handleImageError(image)}
                         onClick={() => handleImageClick(image)}
                         loading="lazy"
@@ -90,7 +86,7 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({
                       <Button
                         variant="secondary"
                         size="icon"
-                        className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                        className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 hover:bg-white"
                         onClick={() => handleImageClick(image)}
                       >
                         <Expand className="h-4 w-4" />
